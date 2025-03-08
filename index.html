@@ -55,7 +55,7 @@
                 align-items: center;
             }
         }
-        .footer {
+        footer {
             background-color: #363635; /* Primary color */
             color: #fff; /* White text */
             padding: 0.5rem;
@@ -64,6 +64,7 @@
 		}
 		.main{
 			margin-left: 1rem;
+            flex: 1;
 		}
 
 
@@ -73,7 +74,7 @@
 
     <nav class="navbar">
 		<img src="Samcss.png" alt="" width="60" height="60">
-        <h1>SamCSS V.1.0</h1>
+        <h1>SamCSS V.1.1</h1>
         <a href="samcss.js" download="samcss.js"><button class="download">Download JS</button></a>
     </nav><br><br>
 	<div class="main">
@@ -83,124 +84,231 @@
 	</div>
 	<br><br>
     <div class="classes">
-        w -- width<br><br>
-        h -- height<br><br>
-        p -- padding<br><br>
-        pt -- padding-top<br><br>
-        pr -- padding-right<br><br>
-        pb -- padding-bottom<br><br>
-        pl -- padding-left<br><br>
-        border -- border<br><br>
-        bw -- border-width<br><br>
-        bs -- border-style<br><br>
-        bc -- border-color<br><br>
-        bt -- border-top<br><br>
-        br -- border-right<br><br>
-        bb -- border-bottom<br><br>
-        bl -- border-left<br><br>
-        brd -- border-radius<br><br>
-        brtl -- border-top-left-radius<br><br>
-        brtr -- border-top-right-radius<br><br>
-        brbr -- border-bottom-right-radius<br><br>
-        brbl -- border-bottom-left-radius<br><br>
-        m -- margin<br><br>
-        mt -- margin-top<br><br>
-        mr -- margin-right<br><br>
-        mb -- margin-bottom<br><br>
-        ml -- margin-left<br><br>
-        bxsz -- box-sizing<br><br>
-        o -- overflow<br><br>
-        ox -- overflow-x<br><br>
-        oy -- overflow-y<br><br>
-        cp -- clip-path<br><br>
-        osh -- overscroll-behavior<br><br>
-        oshx -- overscroll-behavior-x<br><br>
-        oshy -- overscroll-behavior-y<br><br>
-        ct -- contain<br><br>
-        cis -- contain-intrinsic-size<br><br>
-        ciw -- contain-intrinsic-width<br><br>
-        cih -- contain-intrinsic-height<br><br>
-        pos -- position<br><br>
-        t -- top<br><br>
-        r -- right<br><br>
-        b -- bottom<br><br>
-        l -- left<br><br>
-        z -- z-index<br><br>
-        is -- inset<br><br>
-        ibst -- inset-block-start<br><br>
-        ibend -- inset-block-end<br><br>
-        iist -- inset-inline-start<br><br>
-        iiend -- inset-inline-end<br><br>
-        d -- display<br><br>
-        v -- visibility<br><br>
-        f -- float<br><br>
-        c -- clear<br><br>
-        col -- columns<br><br>
-        cow -- column-width<br><br>
-        coc -- column-count<br><br>
-        cog -- column-gap<br><br>
-        cor -- column-rule<br><br>
-        corw -- column-rule-width<br><br>
-        cors -- column-rule-style<br><br>
-        corc -- column-rule-color<br><br>
-        cos -- column-span<br><br>
-        cof -- column-fill<br><br>
-        bbfr -- break-before<br><br>
-        bins -- break-inside<br><br>
-        baft -- break-after<br><br>
-        fd -- flex-direction<br><br>
-        fw -- flex-wrap<br><br>
-        ff -- flex-flow<br><br>
-        jc -- justify-content<br><br>
-        ai -- align-items<br><br>
-        ac -- align-content<br><br>
-        fl -- flex<br><br>
-        flg -- flex-grow<br><br>
-        fls -- flex-shrink<br><br>
-        flb -- flex-basis<br><br>
-        as -- align-self<br><br>
-        g -- gap<br><br>
-        rg -- row-gap<br><br>
-        cg -- column-gap<br><br>
-        pi -- place-items<br><br>
-        pc -- place-content<br><br>
-        ps -- place-self<br><br>
-        gtr -- grid-template-rows<br><br>
-        gtc -- grid-template-columns<br><br>
-        gta -- grid-template-areas<br><br>
-        gt -- grid-template<br><br>
-        grst -- grid-row-start<br><br>
-        gred -- grid-row-end<br><br>
-        gcst -- grid-column-start<br><br>
-        gced -- grid-column-end<br><br>
-        ga -- grid-area<br><br>
-        gar -- grid-auto-rows<br><br>
-        gac -- grid-auto-columns<br><br>
-        gaf -- grid-auto-flow<br><br>
-        gg -- grid-gap<br><br>
-        grg -- grid-row-gap<br><br>
-        gcg -- grid-column-gap<br><br>
-        ji -- justify-items<br><br>
-        aj -- align-items<br><br>
-        jco -- justify-content<br><br>
-        aco -- align-content<br><br>
-        ffam -- font-family<br><br>
-        fs -- font-size<br><br>
-        fst -- font-style<br><br>
-        fw -- font-weight<br><br>
-        fv -- font-variant<br><br>
-        f -- font<br><br>
-        lh -- line-height<br><br>
-        ta -- text-align<br><br>
-        td -- text-decoration<br><br>
-        tdl -- text-decoration-line<br><br>
-        tds -- text-decoration-style<br><br>
-        tdc -- text-decoration-color<br><br>
         
+        w- -- width<br><br>
+h- -- height<br><br>
+minw- -- minWidth<br><br>
+maxw- -- maxWidth<br><br>
+minh- -- minHeight<br><br>
+maxh- -- maxHeight<br><br>
+p- -- padding<br><br>
+pt- -- paddingTop<br><br>
+pr- -- paddingRight<br><br>
+pb- -- paddingBottom<br><br>
+pl- -- paddingLeft<br><br>
+bw- -- borderWidth<br><br>
+bs- -- borderStyle<br><br>
+bc- -- borderColor<br><br>
+br- -- borderRadius<br><br>
+m- -- margin<br><br>
+mt- -- marginTop<br><br>
+mr- -- marginRight<br><br>
+mb- -- marginBottom<br><br>
+ml- -- marginLeft<br><br>
+boxs- -- boxSizing<br><br>
+olw- -- outlineWidth<br><br>
+ols- -- outlineStyle<br><br>
+olc- -- outlineColor<br><br>
+olo- -- outlineOffset<br><br>
+d- -- display<br><br>
+fd- -- flexDirection<br><br>
+fw- -- flexWrap<br><br>
+jc- -- justifyContent<br><br>
+ai- -- alignItems<br><br>
+ac- -- alignContent<br><br>
+gap- -- gap<br><br>
+order- -- order<br><br>
+fg- -- flexGrow<br><br>
+fs- -- flexShrink<br><br>
+fb- -- flexBasis<br><br>
+as- -- alignSelf<br><br>
+ff- -- fontFamily<br><br>
+fz- -- fontSize<br><br>
+fweight- -- fontWeight<br><br>
+fstyle- -- fontStyle<br><br>
+lh- -- lineHeight<br><br>
+ls- -- letterSpacing<br><br>
+ws- -- wordSpacing<br><br>
+ta- -- textAlign<br><br>
+td- -- textDecoration<br><br>
+tt- -- textTransform<br><br>
+ti- -- textIndent<br><br>
+ts- -- textShadow<br><br>
+ws- -- whiteSpace<br><br>
+ow- -- overflowWrap<br><br>
+dir- -- direction<br><br>
+ub- -- unicodeBidi<br><br>
+pos- -- position<br><br>
+top- -- top<br><br>
+right- -- right<br><br>
+bottom- -- bottom<br><br>
+left- -- left<br><br>
+zi- -- zIndex<br><br>
+bgc- -- backgroundColor<br><br>
+bgi- -- backgroundImage<br><br>
+bgr- -- backgroundRepeat<br><br>
+bgp- -- backgroundPosition<br><br>
+bgs- -- backgroundSize<br><br>
+bgo- -- backgroundOrigin<br><br>
+bgcl- -- backgroundClip<br><br>
+bga- -- backgroundAttachment<br><br>
+bgbl- -- backgroundBlendMode<br><br>
+c- -- color<br><br>
+trans- -- transform<br><br>
+to- -- transformOrigin<br><br>
+ts- -- transformStyle<br><br>
+per- -- perspective<br><br>
+pero- -- perspectiveOrigin<br><br>
+tran- -- transition<br><br>
+tp- -- transitionProperty<br><br>
+tdur- -- transitionDuration<br><br>
+ttf- -- transitionTimingFunction<br><br>
+tdel- -- transitionDelay<br><br>
+anim- -- animation<br><br>
+aname- -- animationName<br><br>
+adur- -- animationDuration<br><br>
+atf- -- animationTimingFunction<br><br>
+adel- -- animationDelay<br><br>
+aic- -- animationIterationCount<br><br>
+adir- -- animationDirection<br><br>
+afm- -- animationFillMode<br><br>
+aps- -- animationPlayState<br><br>
+maski- -- maskImage<br><br>
+maskm- -- maskMode<br><br>
+maskr- -- maskRepeat<br><br>
+maskpos- -- maskPosition<br><br>
+masks- -- maskSize<br><br>
+masko- -- maskOrigin<br><br>
+maskcl- -- maskClip<br><br>
+maskcomp- -- maskComposite<br><br>
+maskb- -- maskBorder<br><br>
+clip-p- -- clip-path<br><br>
+filt- -- filter<br><br>
+gtrows- -- gridTemplateRows<br><br>
+gtcols- -- gridTemplateColumns<br><br>
+gtareas- -- gridTemplateAreas<br><br>
+gtemp- -- gridTemplate<br><br>
+growgap- -- gridRowGap<br><br>
+gcolgap- -- gridColumnGap<br><br>
+ggap- -- gridGap<br><br>
+garows- -- gridAutoRows<br><br>
+gacols- -- gridAutoColumns<br><br>
+gaflow- -- gridAutoFlow<br><br>
+ji- -- justifyItems<br><br>
+ali- -- alignItems<br><br>
+pi- -- placeItems<br><br>
+jc- -- justifyContent<br><br>
+ac- -- alignContent<br><br>
+pc- -- placeContent<br><br>
+grstart- -- gridRowStart<br><br>
+grend- -- gridRowEnd<br><br>
+grow- -- gridRow<br><br>
+gcstart- -- gridColumnStart<br><br>
+gcend- -- gridColumnEnd<br><br>
+gcol- -- gridColumn<br><br>
+garea- -- gridArea<br><br>
+js- -- justifySelf<br><br>
+als- -- alignSelf<br><br>
+ps- -- placeSelf<br><br>
+curs- -- cursor<br><br>
+pe- -- pointerEvents<br><br>
+res- -- resize<br><br>
+us- -- userSelect<br><br>
+app- -- appearance<br><br>
+cont- -- content<br><br>
+cc- -- caretColor<br><br>
+sb- -- scrollBehavior<br><br>
+sst- -- scrollSnapType<br><br>
+ssa- -- scrollSnapAlign<br><br>
+bc- -- borderCollapse<br><br>
+bs- -- borderSpacing<br><br>
+cs- -- captionSide<br><br>
+ec- -- emptyCells<br><br>
+tl- -- tableLayout<br><br>
+ls- -- listStyle<br><br>
+lst- -- listStyleType<br><br>
+lsp- -- listStylePosition<br><br>
+lsi- -- listStyleImage<br><br>
+ov- -- overflow<br><br>
+ovx- -- overflowX<br><br>
+ovy- -- overflowY<br><br>
+to- -- textOverflow<br><br>
+vis- -- visibility<br><br>
+wm- -- writingMode<br><br>
+tor- -- textOrientation<br><br>
+dir- -- direction<br><br>
+ub- -- unicodeBidi<br><br>
+bb- -- breakBefore<br><br>
+ba- -- breakAfter<br><br>
+bi- -- breakInside<br><br>
+orph- -- orphans<br><br>
+wid- -- widows<br><br>
+ffs- -- fontFeatureSettings<br><br>
+fvl- -- fontVariantLigatures<br><br>
+fvc- -- fontVariantCaps<br><br>
+fvn- -- fontVariantNumeric<br><br>
+fvea- -- fontVariantEastAsian<br><br>
+fva- -- fontVariantAlternates<br><br>
+fk- -- fontKerning<br><br>
+fos- -- fontOpticalSizing<br><br>
+iv- -- initialValue<br><br>
+all- -- all<br><br>
+ssstop- -- scroll-snap-stop<br><br>
+scrb- -- scroll-behavior<br><br>
+vtn- -- view-transition-name<br><br>
+cont- -- contain<br><br>
+wc- -- will-change<br><br>
+il- -- initial-letter<br><br>
+tdl- -- text-decoration-line<br><br>
+tds- -- text-decoration-style<br><br>
+tdc- -- text-decoration-color<br><br>
+tuo- -- text-underline-offset<br><br>
+tup- -- text-underline-position<br><br>
+hyp- -- hyphens<br><br>
+iso- -- isolation<br><br>
+mbm- -- mix-blend-mode<br><br>
+of- -- object-fit<br><br>
+op- -- object-position<br><br>
+oa- -- offset-anchor<br><br>
+od- -- offset-distance<br><br>
+opath- -- offset-path<br><br>
+orot- -- offset-rotate<br><br>
+ob- -- overscroll-behavior<br><br>
+pba- -- page-break-after<br><br>
+pbb- -- page-break-before<br><br>
+pbi- -- page-break-inside<br><br>
+quot- -- quotes<br><br>
+ra- -- ruby-align<br><br>
+rp- -- ruby-position<br><br>
+sit- -- shape-image-threshold<br><br>
+sm- -- shape-margin<br><br>
+so- -- shape-outside<br><br>
+tsize- -- tab-size<br><br>
+tcu- -- text-combine-upright<br><br>
+tem- -- text-emphasis<br><br>
+tec- -- text-emphasis-color<br><br>
+tep- -- text-emphasis-position<br><br>
+tes- -- text-emphasis-style<br><br>
+tren- -- text-rendering<br><br>
+tsa- -- text-size-adjust<br><br>
+ur- -- unicode-range<br><br>
+va- -- vertical-align<br><br>
+wb- -- word-break<br><br>
+clip-p- -- clip-path<br><br>
+maski- -- mask-image<br><br>
+maskm- -- mask-mode<br><br>
+maskr- -- mask-repeat<br><br>
+maskpos- -- mask-position<br><br>
+masks- -- mask-size<br><br>
+masko- -- mask-origin<br><br>
+maskcl- -- mask-clip<br><br>
+maskcomp- -- mask-composite<br><br>
+maskb- -- mask-border<br><br>
+filt- -- filter<br><br>
 </div>
 </div>
-<footer class="footer bg-primary text-white p-4 text-center">
-    <p>&copy; 2025 SamCSS. All rights reserved.</p>
+<footer class="">
+    <p>&copy; 2025 SamCSS All rights reserved</p>
     </footer>
   
 </html>
