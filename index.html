@@ -1,313 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SamCSS</title>
-	<link rel="shortcut icon" href="Samcss.png" type="image/x-icon">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-			overflow-x: hidden;
-        }
-        .navbar {
-            background-color: white;
-            padding: 15px 20px;
-            text-align: center;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-			align-items: center;
-			justify-content: center;
-        }
-		.navbar button{
-			margin-left: 2rem;
-		}
-		.download {
-			display: inline-block;
-			padding: 10px 20px;
-			font-size: 16px;
-			font-weight: bold;
-			text-align: center;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background 0.3s ease, transform 0.2s ease;
-			}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SamCSS Documentation</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      color: #ffffff;
+      height: 100vh;
+      padding: 20px;
+      position: fixed;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    .sidebar a {
+      color: #414141;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+      flex: 1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #bdc3c7;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    h1, h2 {
+      color: #34495e;
+    }
+    .logotext{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 9px;
+    }
+    .logotext img{
+      height: 50px;
+      width: 50px;
+      padding: 9px;
+    }
+    pre{
+      background: rgb(225, 232, 131);
+      padding: 8px;
+    }
+    .link-no-style {
+  text-decoration: none;
+}
 
-		.download:hover {
-			transform: scale(1.05);
-		}
-		pre{
-			background: #f5f2f0;
-			padding: 0.5rem;
-		}
-        .navbar h1 {
-            color: #007bff; /* Blue shade */
-            font-size: 24px;
-            margin: 0;
-        }
-        @media (max-width: 600px) {
-            .navbar h1 {
-                font-size: 20px;
-            }  
-            .classes{
-                align-items: center;
-            }
-        }
-        footer {
-            background-color: #363635; /* Primary color */
-            color: #fff; /* White text */
-            padding: 0.5rem;
-            text-align: center;
-            font-size: 1rem;
-		}
-		.main{
-			margin-left: 1rem;
-            flex: 1;
-		}
+.btn-primary {
+  padding: 5px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
+.btn-primary:hover {
+  background-color: #0056b3;
+}
 
-    </style>
+  </style>
 </head>
 <body>
+  <div class="sidebar">
+    <div class="logotext">
+      <img src="logo.png" alt="" width="50">
+      <h2>SamCSS</h2>
+    </div>
+    <a href="samcss.js" class="link-no-style" download="samcss.js">
+      <button class="btn-primary">Click Me</button>
+    </a>    
+    <a href="#defaults">Defaults</a><hr>
+    <a href="#unitless">Unitless Properties</a><hr>
+    <a href="#special">Special Mappings</a><hr>
+    <a href="#layout">Layout</a><hr>
+    <a href="#positioning">Positioning</a><hr>
+    <a href="#display">Display & Visibility</a><hr>
+    <a href="#flexbox">Flexbox</a><hr>
+    <a href="#grid">Grid</a><hr>
+    <a href="#typography">Typography</a><hr>
+    <a href="#backgrounds">Colors & Backgrounds</a><hr>
+    <a href="#animation">Animations</a><hr>
+    <a href="#transform">Transform & 3D</a><hr>
+    <a href="#svg">SVG Properties</a><hr>
+    <a href="#misc">Misc UI</a><hr>
+    <a href="#tables">Tables & Lists</a><hr>
+    <a href="#media">Paged Media</a><hr>
+    <a href="#containment">Containment</a><hr>
+    <a href="#masking">Masking</a><hr>
+    <a href="#object">Object</a><hr>
+    <a href="#logical">Logical</a><hr>
+  </div>
 
-    <nav class="navbar">
-		<img src="Samcss.png" alt="" width="60" height="60">
-        <h1>SamCSS V.1.2</h1>
-        <a href="samcss.js" download="samcss.js"><button class="download">Download JS</button></a>
-    </nav><br><br>
-	<div class="main">
-	<div class="link">
-		<h2>Link CDN</h2><br>
-		<pre><code>&ltscript src="https://cdn.jsdelivr.net/gh/Samanyu-Pritish/samcss/samcss.js"&gt&lt/script&gt</code></pre>
-	</div>
-	<br><br>
-    <div class="classes">
-        w- -- width<br><br>
-        h- -- height<br><br>
-        minw- -- min-width<br><br>
-        maxw- -- max-width<br><br>
-        minh- -- min-height<br><br>
-        maxh- -- max-height<br><br>
-        p- -- padding<br><br>
-        pt- -- padding-top<br><br>
-        pr- -- padding-right<br><br>
-        pb- -- padding-bottom<br><br>
-        pl- -- padding-left<br><br>
-        bw- -- border-width<br><br>
-        bs- -- border-style<br><br>
-        bc- -- border-color<br><br>
-        br- -- border-radius<br><br>
-        m- -- margin<br><br>
-        mt- -- margin-top<br><br>
-        mr- -- margin-right<br><br>
-        mb- -- margin-bottom<br><br>
-        ml- -- margin-left<br><br>
-        boxs- -- box-sizing<br><br>
-        olw- -- outline-width<br><br>
-        ols- -- outline-style<br><br>
-        olc- -- outline-color<br><br>
-        olo- -- outline-offset<br><br>
-        d- -- display<br><br>
-        fd- -- flex-direction<br><br>
-        fw- -- flex-wrap<br><br>
-        jc- -- justify-content<br><br>
-        ai- -- align-items<br><br>
-        ac- -- align-content<br><br>
-        gap- -- gap<br><br>
-        order- -- order<br><br>
-        fg- -- flex-grow<br><br>
-        fs- -- flex-shrink<br><br>
-        fb- -- flex-basis<br><br>
-        as- -- align-self<br><br>
-        ff- -- font-family<br><br>
-        fz- -- font-size<br><br>
-        fweight- -- font-weight<br><br>
-        fstyle- -- font-style<br><br>
-        lh- -- line-height<br><br>
-        ls- -- letter-spacing<br><br>
-        ws- -- word-spacing<br><br>
-        ta- -- text-align<br><br>
-        td- -- text-decoration<br><br>
-        tt- -- text-transform<br><br>
-        ti- -- text-indent<br><br>
-        ts- -- text-shadow<br><br>
-        ws- -- white-space<br><br>
-        ow- -- overflow-wrap<br><br>
-        dir- -- direction<br><br>
-        ub- -- unicode-bidi<br><br>
-        pos- -- position<br><br>
-        top- -- top<br><br>
-        right- -- right<br><br>
-        bottom- -- bottom<br><br>
-        left- -- left<br><br>
-        zi- -- z-index<br><br>
-        bgc- -- background-color<br><br>
-        bgi- -- background-image<br><br>
-        bgr- -- background-repeat<br><br>
-        bgp- -- background-position<br><br>
-        bgs- -- background-size<br><br>
-        bgo- -- background-origin<br><br>
-        bgcl- -- background-clip<br><br>
-        bga- -- background-attachment<br><br>
-        bgbl- -- background-blend-mode<br><br>
-        c- -- color<br><br>
-        trans- -- transform<br><br>
-        to- -- transform-origin<br><br>
-        ts- -- transform-style<br><br>
-        per- -- perspective<br><br>
-        pero- -- perspective-origin<br><br>
-        tran- -- transition<br><br>
-        tp- -- transition-property<br><br>
-        tdur- -- transition-duration<br><br>
-        ttf- -- transition-timing-function<br><br>
-        tdel- -- transition-delay<br><br>
-        anim- -- animation<br><br>
-        aname- -- animation-name<br><br>
-        adur- -- animation-duration<br><br>
-        atf- -- animation-timing-function<br><br>
-        adel- -- animation-delay<br><br>
-        aic- -- animation-iteration-count<br><br>
-        adir- -- animation-direction<br><br>
-        afm- -- animation-fill-mode<br><br>
-        aps- -- animation-play-state<br><br>
-        maski- -- mask-image<br><br>
-        maskm- -- mask-mode<br><br>
-        maskr- -- mask-repeat<br><br>
-        maskpos- -- mask-position<br><br>
-        masks- -- mask-size<br><br>
-        masko- -- mask-origin<br><br>
-        maskcl- -- mask-clip<br><br>
-        maskcomp- -- mask-composite<br><br>
-        maskb- -- mask-border<br><br>
-        clip-p- -- clip-path<br><br>
-        filt- -- filter<br><br>
-        gtrows- -- grid-template-rows<br><br>
-        gtcols- -- grid-template-columns<br><br>
-        gtareas- -- grid-template-areas<br><br>
-        gtemp- -- grid-template<br><br>
-        growgap- -- grid-row-gap<br><br>
-        gcolgap- -- grid-column-gap<br><br>
-        ggap- -- grid-gap<br><br>
-        garows- -- grid-auto-rows<br><br>
-        gacols- -- grid-auto-columns<br><br>
-        gaflow- -- grid-auto-flow<br><br>
-        ji- -- justify-items<br><br>
-        ali- -- align-items<br><br>
-        pi- -- place-items<br><br>
-        jc- -- justify-content<br><br>
-        ac- -- align-content<br><br>
-        pc- -- place-content<br><br>
-        grstart- -- grid-row-start<br><br>
-        grend- -- grid-row-end<br><br>
-        grow- -- grid-row<br><br>
-        gcstart- -- grid-column-start<br><br>
-        gcend- -- grid-column-end<br><br>
-        gcol- -- grid-column<br><br>
-        garea- -- grid-area<br><br>
-        js- -- justify-self<br><br>
-        als- -- align-self<br><br>
-        ps- -- place-self<br><br>
-        curs- -- cursor<br><br>
-        pe- -- pointer-events<br><br>
-        res- -- resize<br><br>
-        us- -- user-select<br><br>
-        app- -- appearance<br><br>
-        cont- -- content<br><br>
-        cc- -- caret-color<br><br>
-        sb- -- scroll-behavior<br><br>
-        sst- -- scroll-snap-type<br><br>
-        ssa- -- scroll-snap-align<br><br>
-        bc- -- border-collapse<br><br>
-        bs- -- border-spacing<br><br>
-        cs- -- caption-side<br><br>
-        ec- -- empty-cells<br><br>
-        tl- -- table-layout<br><br>
-        ls- -- list-style<br><br>
-        lst- -- list-style-type<br><br>
-        lsp- -- list-style-position<br><br>
-        lsi- -- list-style-image<br><br>
-        ov- -- overflow<br><br>
-        ovx- -- overflow-x<br><br>
-        ovy- -- overflow-y<br><br>
-        to- -- text-overflow<br><br>
-        vis- -- visibility<br><br>
-        wm- -- writing-mode<br><br>
-        tor- -- text-orientation<br><br>
-        dir- -- direction<br><br>
-        ub- -- unicode-bidi<br><br>
-        bb- -- break-before<br><br>
-        ba- -- break-after<br><br>
-        bi- -- break-inside<br><br>
-        orph- -- orphans<br><br>
-        wid- -- widows<br><br>
-        ffs- -- font-feature-settings<br><br>
-        fvl- -- font-variant-ligatures<br><br>
-        fvc- -- font-variant-caps<br><br>
-        fvn- -- font-variant-numeric<br><br>
-        fvea- -- font-variant-east-asian<br><br>
-        fva- -- font-variant-alternates<br><br>
-        fk- -- font-kerning<br><br><br>
-        fos- -- font-optical-sizing<br><br>
-        iv- -- initial-value<br><br>
-        all- -- all<br><br>
-        ssstop- -- scroll-snap-stop<br><br>
-        scrb- -- scroll-behavior<br><br>
-        vtn- -- view-transition-name<br><br>
-        cont- -- contain<br><br>
-        wc- -- will-change<br><br>
-        il- -- initial-letter<br><br>
-        tdl- -- text-decoration-line<br><br>
-        tds- -- text-decoration-style<br><br>
-        tdc- -- text-decoration-color<br><br>
-        tuo- -- text-underline-offset<br><br>
-        tup- -- text-underline-position<br><br>
-        hyp- -- hyphens<br><br>
-        iso- -- isolation<br><br>
-        mbm- -- mix-blend-mode<br><br>
-        of- -- object-fit<br><br>
-        op- -- object-position<br><br>
-        oa- -- offset-anchor<br><br>
-        od- -- offset-distance<br><br>
-        opath- -- offset-path<br><br>
-        orot- -- offset-rotate<br><br>
-        ob- -- overscroll-behavior<br><br>
-        pba- -- page-break-after<br><br>
-        pbb- -- page-break-before<br><br>
-        pbi- -- page-break-inside<br><br>
-        quot- -- quotes<br><br>
-        ra- -- ruby-align<br><br>
-        rp- -- ruby-position<br><br>
-        sit- -- shape-image-threshold<br><br>
-        sm- -- shape-margin<br><br>
-        so- -- shape-outside<br><br>
-        tsize- -- tab-size<br><br>
-        tcu- -- text-combine-upright<br><br>
-        tem- -- text-emphasis<br><br>
-        tec- -- text-emphasis-color<br><br>
-        tep- -- text-emphasis-position<br><br>
-        tes- -- text-emphasis-style<br><br>
-        tren- -- text-rendering<br><br>
-        tsa- -- text-size-adjust<br><br>
-        ur- -- unicode-range<br><br>
-        va- -- vertical-align<br><br>
-        wb- -- word-break<br><br>
-        clip-p- -- clip-path<br><br>
-        maski- -- mask-image<br><br>
-        maskm- -- mask-mode<br><br>
-        maskr- -- mask-repeat<br><br>
-        maskpos- -- mask-position<br><br>
-        masks- -- mask-size<br><br>
-        masko- -- mask-origin<br><br>
-        maskcl- -- mask-clip<br><br>
-        maskcomp- -- mask-composite<br><br>
-        maskb- -- mask-border<br><br>
-        filt- -- filter<br><br>
-</div>
-</div>
-<footer class="">
-    <p>&copy; 2025 SamCSS All rights reserved</p>
-    </footer>
-  
+  <div class="content">
+    <h1>SamCSS</h1><br>
+    <h2>Link CDN</h2><br>
+    <pre><code>&ltscript src="https://cdn.jsdelivr.net/gh/Samanyu-Pritish/samcss/samcss.js"&gt&lt/script&gt</code></pre>
+    <br><br><h2 id="defaults">Default Units</h2>
+    <table>
+      <tr><th>Setting</th><th>Value</th></tr>
+      <tr><td>Default Unit</td><td>rem</td></tr>
+    </table>
+
+    <br><br><h2 id="unitless">Unitless Properties</h2>
+    <table>
+      <tr><th>Property</th></tr>
+      <tr><td>z-index</td></tr>
+      <tr><td>opacity</td></tr>
+      <tr><td>flex</td></tr>
+      <tr><td>flex-grow</td></tr>
+      <tr><td>flex-shrink</td></tr>
+      <tr><td>column-count</td></tr>
+      <tr><td>font-weight</td></tr>
+      <tr><td>line-height</td></tr>
+      <tr><td>orphans</td></tr>
+      <tr><td>widows</td></tr>
+    </table>
+
+    <br><br><h2 id="special">Special Mappings</h2>
+    <table>
+      <tr><th>Property</th><th>Prefix</th><th>Value</th></tr>
+      <tr><td>display</td><td>b</td><td>block</td></tr>
+      <tr><td>display</td><td>i</td><td>inline</td></tr>
+      <tr><td>display</td><td>ib</td><td>inline-block</td></tr>
+      <tr><td>position</td><td>r</td><td>relative</td></tr>
+      <tr><td>position</td><td>a</td><td>absolute</td></tr>
+      <tr><td>position</td><td>f</td><td>fixed</td></tr>
+      <tr><td>text-align</td><td>l</td><td>left</td></tr>
+      <tr><td>text-align</td><td>c</td><td>center</td></tr>
+      <tr><td>font-weight</td><td>n</td><td>normal</td></tr>
+      <tr><td>overflow</td><td>a</td><td>auto</td></tr>
+      <tr><td>visibility</td><td>v</td><td>visible</td></tr>
+      <tr><td>border-style</td><td>s</td><td>solid</td></tr>
+      <tr><td>flex-direction</td><td>r</td><td>row</td></tr>
+      <tr><td>justify-content</td><td>fs</td><td>flex-start</td></tr>
+      <tr><td>align-items</td><td>c</td><td>center</td></tr>
+    </table>
+
+    <br><br><h2 id="layout">Layout</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>w</td><td>width</td></tr>
+      <tr><td>h</td><td>height</td></tr>
+      <tr><td>p</td><td>padding</td></tr>
+      <tr><td>m</td><td>margin</td></tr>
+      <tr><td>brd</td><td>border-radius</td></tr>
+      <tr><td>bs</td><td>border-style</td></tr>
+      <tr><td>bc</td><td>border-color</td></tr>
+    </table>
+
+    <br><br><h2 id="positioning">Positioning</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>pos</td><td>position</td></tr>
+      <tr><td>t</td><td>top</td></tr>
+      <tr><td>r</td><td>right</td></tr>
+      <tr><td>b</td><td>bottom</td></tr>
+      <tr><td>l</td><td>left</td></tr>
+      <tr><td>z</td><td>z-index</td></tr>
+    </table>
+
+    <br><br><h2 id="display">Display & Visibility</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>d</td><td>display</td></tr>
+      <tr><td>v</td><td>visibility</td></tr>
+      <tr><td>f</td><td>float</td></tr>
+      <tr><td>c</td><td>clear</td></tr>
+    </table>
+
+    <br><br><h2 id="flexbox">Flexbox</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>fd</td><td>flex-direction</td></tr>
+      <tr><td>fw</td><td>flex-wrap</td></tr>
+      <tr><td>jc</td><td>justify-content</td></tr>
+      <tr><td>ai</td><td>align-items</td></tr>
+      <tr><td>ac</td><td>align-content</td></tr>
+      <tr><td>fl</td><td>flex</td></tr>
+      <tr><td>flg</td><td>flex-grow</td></tr>
+      <tr><td>fls</td><td>flex-shrink</td></tr>
+      <tr><td>flb</td><td>flex-basis</td></tr>
+      <tr><td>as</td><td>align-self</td></tr>
+    </table>
+
+    <br><br><h2 id="grid">Grid</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>gtc</td><td>grid-template-columns</td></tr>
+      <tr><td>gtr</td><td>grid-template-rows</td></tr>
+      <tr><td>ga</td><td>grid-area</td></tr>
+      <tr><td>gaf</td><td>grid-auto-flow</td></tr>
+      <tr><td>pc</td><td>place-content</td></tr>
+    </table>
+
+    <br><br><h2 id="typography">Typography</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>fs</td><td>font-size</td></tr>
+      <tr><td>fw</td><td>font-weight</td></tr>
+      <tr><td>lh</td><td>line-height</td></tr>
+      <tr><td>ta</td><td>text-align</td></tr>
+      <tr><td>td</td><td>text-decoration</td></tr>
+      <tr><td>ls</td><td>letter-spacing</td></tr>
+    </table>
+
+    <br><br><h2 id="backgrounds">Colors & Backgrounds</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>colr</td><td>color</td></tr>
+      <tr><td>bgc</td><td>background-color</td></tr>
+      <tr><td>bgi</td><td>background-image</td></tr>
+      <tr><td>bgs</td><td>background-size</td></tr>
+    </table>
+
+    <br><br><h2 id="animation">Animations</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>anim</td><td>animation</td></tr>
+      <tr><td>trns</td><td>transition</td></tr>
+      <tr><td>trd</td><td>transition-duration</td></tr>
+    </table>
+
+    <br><br><h2 id="transform">Transform & 3D</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>tf</td><td>transform</td></tr>
+      <tr><td>tfo</td><td>transform-origin</td></tr>
+      <tr><td>pers</td><td>perspective</td></tr>
+    </table>
+
+    <br><br><h2 id="svg">SVG Properties</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>fill</td><td>fill</td></tr>
+      <tr><td>stroke</td><td>stroke</td></tr>
+    </table>
+
+    <br><br><h2 id="misc">Misc UI</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>curs</td><td>cursor</td></tr>
+      <tr><td>us</td><td>user-select</td></tr>
+    </table>
+
+    <br><br><h2 id="tables">Tables & Lists</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>lstst</td><td>list-style-type</td></tr>
+      <tr><td>tbllyt</td><td>table-layout</td></tr>
+    </table>
+
+    <br><br><h2 id="media">Paged Media</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>orph</td><td>orphans</td></tr>
+      <tr><td>wids</td><td>widows</td></tr>
+    </table>
+
+    <br><br><h2 id="containment">Containment</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>cntn</td><td>contain</td></tr>
+    </table>
+
+    <br><br><h2 id="masking">Masking</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>msk</td><td>mask</td></tr>
+      <tr><td>mskimg</td><td>mask-image</td></tr>
+    </table>
+
+    <br><br><h2 id="object">Object</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>objfit</td><td>object-fit</td></tr>
+      <tr><td>objpos</td><td>object-position</td></tr>
+    </table>
+
+    <br><br><h2 id="logical">Logical Properties</h2>
+    <table>
+      <tr><th>Prefix</th><th>CSS Property</th></tr>
+      <tr><td>mis</td><td>margin-inline-start</td></tr>
+      <tr><td>mies</td><td>margin-inline-end</td></tr>
+      <tr><td>pbs</td><td>padding-block-start</td></tr>
+      <tr><td>pbe</td><td>padding-block-end</td></tr>
+    </table>
+
+  </div>
+</body>
 </html>
